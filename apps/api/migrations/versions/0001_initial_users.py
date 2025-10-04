@@ -11,7 +11,7 @@ def upgrade() -> None:
     op.create_table(
         'users',
         sa.Column('id', sa.BigInteger(), primary_key=True),
-        sa.Column('email', sa.String(length=320), nullable=False),
+        sa.Column('email', sa.String(length=320), nullable=False, unique=True),
         sa.Column('hashed_password', sa.String(length=255), nullable=False),
         sa.Column('name', sa.String(length=120), nullable=True),
         sa.Column('bio', sa.Text(), nullable=True),
@@ -20,8 +20,6 @@ def upgrade() -> None:
         sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
         sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
     )
-    op.create_index('ix_users_email', 'users', ['email'], unique=True)
 
 def downgrade() -> None:
-    op.drop_index('ix_users_email', table_name='users')
     op.drop_table('users')

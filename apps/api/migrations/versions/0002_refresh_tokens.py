@@ -16,8 +16,6 @@ def upgrade():
         sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('CURRENT_TIMESTAMP'), nullable=False),
         sa.Column('expires_at', sa.DateTime(timezone=True), nullable=False),
     )
-    op.create_index('ix_refresh_tokens_user_id', 'refresh_tokens', ['user_id'])
 
 def downgrade():
-    op.drop_index('ix_refresh_tokens_user_id', table_name='refresh_tokens')
     op.drop_table('refresh_tokens')

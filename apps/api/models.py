@@ -22,3 +22,12 @@ class RefreshToken(Base):
     expires_at = sa.Column(sa.DateTime(timezone=True), nullable=False)
 
     user = relationship("User", backref="refresh_tokens")
+
+class Photo(Base):
+    __tablename__ = "photos"
+
+    id = sa.Column(sa.BigInteger, primary_key=True)
+    user_id = sa.Column(sa.BigInteger, sa.ForeignKey("users.id", ondelete="CASCADE"), nullable=False, index=True)
+    object_key = sa.Column(sa.String(512), nullable=False, index=True)
+    content_type = sa.Column(sa.String(128), nullable=True)
+    created_at = sa.Column(sa.DateTime(timezone=True), server_default=sa.func.now(), nullable=False)
