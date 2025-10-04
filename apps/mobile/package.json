@@ -1,0 +1,24 @@
+{
+  "name": "mobile",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "dev": "expo start --port 8082"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.28.4",
+    "@dating/ui": "workspace:*",
+    "@tanstack/react-query": "5.51.23",
+    "expo": "51.0.39",
+    "expo-router": "3.5.24",
+    "react": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-web": "0.19.13",
+    "socket.io-client": "4.7.5",
+    "tamagui": "1.135.0",
+    "zustand": "4.5.4"
+  },
+  "devDependencies": {
+    "typescript": "~5.3.3"
+  }
+}

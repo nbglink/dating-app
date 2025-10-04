@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "DatingApp",
+    "slug": "dating-app",
+    "scheme": "dating",
+    "ios": { "supportsTablet": true },
+    "android": { "adaptiveIcon": { "foregroundImage": "./assets/adaptive-icon.png", "backgroundColor": "#FFFFFF" } }
+  }
+}

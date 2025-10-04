@@ -1,0 +1,8 @@
+{
+  "name": "api",
+  "private": true,
+  "scripts": {
+    "dev": "uvicorn main:app --host 0.0.0.0 --port 8000",
+    "dev:reload": "uvicorn main:app --reload --host 0.0.0.0 --port 8000"
+  }
+}

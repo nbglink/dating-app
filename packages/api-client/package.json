@@ -1,0 +1,12 @@
+{
+  "name": "@dating/api-client",
+  "private": true,
+  "version": "0.0.7",
+  "scripts": {
+    "gen:sdk": "openapi-typescript http://localhost:8000/openapi.json -o src/types.ts"
+  },
+  "dependencies": {
+    "openapi-typescript": "7.4.2",
+    "axios": "1.7.3"
+  }
+}
